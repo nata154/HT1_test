@@ -31,7 +31,7 @@
 
 <form action="<%=request.getContextPath()%>/" method="post">
 <input type="hidden" name="id" value="<%=person.getId()%>"/>
-<table align="center" border="1" width="70%">
+<table align="center" border="1" width="70%" bgcolor="pink">
     <%
     if ((error_message != null)&&(!error_message.equals("")))
     {
@@ -58,7 +58,7 @@
         <td><input type="text" name="middlename" value="<%=person.getMiddlename()%>"/></td>
     </tr>
     <tr>
-        <td>Телефоны:</td>
+        <!--<td>Телефоны:</td>
         <td>
          <textarea name="phones" cols="40" rows="5"><%
           for(String phone : person.getPhones().values())
@@ -66,11 +66,13 @@
          	out.write(phone + "\n");
            }
          %></textarea>
-        </td>
+        </td>-->
     </tr>
     <tr>
         <td colspan="2" align="center">
-         <input type="submit" name="<%=jsp_parameters.get("next_action")%>" value="<%=jsp_parameters.get("next_action_label")%>" />
+        <input type="submit" name="<%=jsp_parameters.get("next_action")%>" value="<%=jsp_parameters.get("next_action_label")%>" />
+        <input type="submit" name="submit" value="submit" /><br/>
+        <a href="<%=request.getContextPath()%>/phonebook_jsp">Вернуться к списку</a>
         </td>
     </tr> 
  </table>

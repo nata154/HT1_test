@@ -31,7 +31,7 @@ public class Phonebook {
 	// При создании экземпляра класса из БД извлекаются все записи.
 	protected Phonebook() throws ClassNotFoundException, SQLException
 	{
-		ResultSet db_data = this.db.getDBData("SELECT * FROM `person` ORDER BY `surname` ASC");
+		ResultSet db_data = this.db.getDBData("SELECT * FROM 'person' ORDER BY 'surname' ASC");
 		while (db_data.next()) {
 			this.persons.put(db_data.getString("id"), new Person(db_data.getString("id"), db_data.getString("name"), db_data.getString("surname"), db_data.getString("middlename")));
 		}

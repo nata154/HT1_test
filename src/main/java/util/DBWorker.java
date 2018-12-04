@@ -43,7 +43,7 @@ public class DBWorker {
 		try
 		{
 			Class.forName("oracle.jdbc.OracleDriver").newInstance();
-			connect = DriverManager.getConnection("jdbc:oracle://localhost/phonebook?user=SYS&password=J7j42jj8&useUnicode=true&characterEncoding=UTF-8&characterSetResults=utf8&connectionCollation=utf8_general_ci");
+			connect = DriverManager.getConnection("jdbc:oracle:thin://localhost/phonebook?user=SYS&password=J7j42jj8&useUnicode=true&characterEncoding=UTF-8&characterSetResults=utf8&connectionCollation=utf8_general_ci");
 			statement = connect.createStatement();
 			ResultSet resultSet = statement.executeQuery(query);
 			return resultSet;
@@ -65,8 +65,8 @@ public class DBWorker {
 		Connection connect;
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/phonebook?user=root&password=123456&useUnicode=true&characterEncoding=UTF-8&characterSetResults=utf8&connectionCollation=utf8_general_ci");
+			Class.forName("oracle.jdbc.OracleDriver").newInstance();
+			connect = DriverManager.getConnection("jdbc:oracle:thin://localhost/phonebook?user=SYS&password=J7j42jj8&useUnicode=true&characterEncoding=UTF-8&characterSetResults=utf8&connectionCollation=utf8_general_ci");
 			statement = connect.createStatement();
 			this.affected_rows = statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
 		

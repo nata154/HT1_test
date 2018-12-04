@@ -13,7 +13,7 @@
 <body>
 
 <%
-    // Phonebook phonebook = Phonebook.getInstance();
+    //Phonebook phonebook = Phonebook.getInstance();
 	String user_message = "";
 	HashMap<String,String> jsp_parameters = new HashMap<String,String>();
 	Phonebook phonebook = (Phonebook)request.getAttribute("phonebook");
@@ -26,7 +26,7 @@
 	user_message = jsp_parameters.get("current_action_result_label");
 %>
 
-<table align="center" border="1" width="90%">
+<table align="center" border="1" width="90%" bgcolor="pink">
     
     <%
     if ((user_message != null)&&(!user_message.equals("")))

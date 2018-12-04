@@ -30,15 +30,10 @@ public class ManagePersonServlet extends HttpServlet {
 		{
 			this.phonebook = Phonebook.getInstance();
 		}
-		catch (ClassNotFoundException e)
+		catch (ClassNotFoundException | SQLException e)
 		{
 			e.printStackTrace();
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}        
-        
+		}    
     }
 
     // Валидация ФИО и генерация сообщения об ошибке в случае невалидных данных.
